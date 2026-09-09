@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConstructCheck</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>ConstructCheck</h1>
+        <p>Construction Progress & Payment Verification</p>
+    </header>
+
+    <h2 id="project-name">Project</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Budget</h3>
+            <p id="budget">-</p>
+        </div>
+
+        <div class="card">
+            <h3>Progress</h3>
+            <p id="progress">-</p>
+        </div>
+
+        <div class="card">
+            <h3>Verified Work</h3>
+            <p id="verified">-</p>
+        </div>
+
+        <div class="card">
+            <h3>Approved Payments</h3>
+            <p id="approved">-</p>
+        </div>
+
+        <div class="card warning">
+            <h3>Potential Overpayment</h3>
+            <p id="overpayment">-</p>
+        </div>
+
+    </div>
+
+    <h2>Project Operations</h2>
+
+<div class="forms">
+
+    <div class="form-card">
+        <h3>Add Site Progress</h3>
+
+        <label>BOQ Item</label>
+        <select id="progress-boq"></select>
+
+        <label>Date</label>
+        <input type="date" id="progress-date">
+
+        <label>Verified Quantity</label>
+        <input
+            type="number"
+            id="progress-quantity"
+            step="0.01"
+        >
+
+        <label>Notes</label>
+        <input
+            type="text"
+            id="progress-notes"
+            placeholder="e.g. First floor concrete completed"
+        >
+
+        <button onclick="addProgress()">
+            Add Progress
+        </button>
+
+        <p id="progress-message"></p>
+    </div>
+
+
+    <div class="form-card">
+        <h3>Submit Payment Claim</h3>
+
+        <label>BOQ Item</label>
+        <select id="claim-boq"></select>
+
+        <label>Date</label>
+        <input type="date" id="claim-date">
+
+        <label>Claimed Quantity</label>
+        <input
+            type="number"
+            id="claim-quantity"
+            step="0.01"
+        >
+
+        <button onclick="submitClaim()">
+            Submit Claim
+        </button>
+
+        <p id="claim-message"></p>
+    </div>
+
+</div>
+
+    <h2>Bill of Quantities</h2>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Unit</th>
+            <th>Planned Quantity</th>
+            <th>Unit Price</th>
+        </tr>
+        </thead>
+
+        <tbody id="boq-table">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
