@@ -1,0 +1,6 @@
+code,description,unit,planned_quantity,unit_price
+EX-001,Excavation,m3,2500,18
+C-002,Concrete C25/30,m3,900,120
+R-002,Reinforcement Steel,t,110,1180
+F-002,Formwork,m2,6200,32
+M-002,Masonry,m2,2800,42
